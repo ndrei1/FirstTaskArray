@@ -5,16 +5,15 @@ import com.golovin.array.exeption.CustomArrayException;
 
 public interface ArraySearchService {
 
-    public int searchMinValueInArray(CustomArray customArray) throws CustomArrayException;
+    int searchMinValueInArray(CustomArray customArray) throws CustomArrayException;
 
-    public int searchMaxValueInArray(CustomArray customArray) throws CustomArrayException;
+    int searchMaxValueInArray(CustomArray customArray) throws CustomArrayException;
 
-    public int searchSumOfValueInArray(CustomArray customArray);
+    int searchSumOfValueInArray(CustomArray customArray);
 
-    public double searchAverageValueInArray(CustomArray customArray) throws CustomArrayException;
+    double searchAverageValueInArray(CustomArray customArray) throws CustomArrayException;
 
-    public int searchQuantityOfPositiveNumber(CustomArray customArray);
+    int searchQuantityOfPositiveNumber(CustomArray customArray);
 
-    public int searchQuantityOfNegativeNumber(CustomArray customArray);
-
+    int searchQuantityOfNegativeNumber(CustomArray customArray);
 }

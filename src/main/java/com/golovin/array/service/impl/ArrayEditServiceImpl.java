@@ -2,8 +2,14 @@ package com.golovin.array.service.impl;
 
 import com.golovin.array.entity.CustomArray;
 import com.golovin.array.service.ArrayEditService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import java.util.Arrays;
 
 public class ArrayEditServiceImpl implements ArrayEditService {
+    private final static Logger logger = LogManager.getLogger(ArrayEditServiceImpl.class);
+
     @Override
     public CustomArray changeNegativeNumbersToPositive(CustomArray customArray) {
         int[] changedArray = customArray.getArray();
@@ -12,6 +18,7 @@ public class ArrayEditServiceImpl implements ArrayEditService {
                 changedArray[i] = changedArray[i] * -1;
             }
         }
+        logger.info("Array update: all negative numbers change to positive" + Arrays.toString(changedArray));
         return new CustomArray(changedArray);
     }
 
@@ -31,6 +38,7 @@ public class ArrayEditServiceImpl implements ArrayEditService {
                 }
             }
         }
+        logger.info("Array update: sorted from bubble method" + Arrays.toString(array));
         return new CustomArray(array);
     }
 
@@ -46,13 +54,13 @@ public class ArrayEditServiceImpl implements ArrayEditService {
             }
             array[j + 1] = current;
         }
+        logger.info("Array update: sorted from insert method" + Arrays.toString(array));
         return new CustomArray(array);
     }
 
     @Override
     public CustomArray sortBySelection(CustomArray customArray) {
         int[] array = customArray.getArray();
-
         for (int i = 0; i < array.length; i++) {
             int min = array[i];
             int minId = i;
@@ -66,6 +74,7 @@ public class ArrayEditServiceImpl implements ArrayEditService {
             array[i] = min;
             array[minId] = temp;
         }
+        logger.info("Array update: sorted from selection method" + Arrays.toString(array));
         return new CustomArray(array);
     }
 

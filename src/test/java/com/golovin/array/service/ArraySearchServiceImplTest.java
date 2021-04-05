@@ -46,7 +46,6 @@ public class ArraySearchServiceImplTest {
 
     @Test
     public void shouldSearchQuantityOfPositiveNumber() {
-
         int actualValue = searchServiceImplTest.searchQuantityOfPositiveNumber(actualCustomArray);
         int expectedValue = 5;
         assertEquals(actualValue, expectedValue);

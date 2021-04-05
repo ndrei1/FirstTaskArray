@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="WARN">
 
-    <Properties>
-        <property name="LOG_DIR">logs</property>
-        <property name="ARCHIVE_LOG_DIR">${LOG_DIR}/archive</property>
-        <property name="pattern_file">%d{HH:mm:ss.SSS} [%c{1}] %-5level %logger{1} - %msg%n</property>
-    </Properties>
-
     <Appenders>
         <Console name="Console" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%c{1}] %-5level %logger{36} - %msg%n"/>
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} %c{1} %-1level  - %msg%n"/>
         </Console>
 
-        <File name="File1" filename="logs/text.log" bufferedIO="true">
-            <PatternLayout pattern="${pattern_file}" />
+        <File name="File" filename="logs/text.log" bufferedIO="true">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%c{1}] %-5level %logger{1} - %msg%n" />
         </File>
 
     </Appenders>
@@ -24,12 +18,12 @@
         </Logger>
 
         <Logger name= "Log_File" level="trace" additivity="false">
-            <AppenderRef ref="File1"/>
+            <AppenderRef ref="File"/>
         </Logger>
 
         <Root level="all">
             <AppenderRef ref="Console"/>
-            <AppenderRef ref="File1" />
+            <AppenderRef ref="File" />
         </Root>
     </Loggers>
 </Configuration>

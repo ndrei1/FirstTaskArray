@@ -15,7 +15,7 @@ public class ArraySearchServiceImpl implements ArraySearchService {
     }
 
     @Override
-    public int searchMaxValueInArray(CustomArray customArray) throws CustomArrayException{
+    public int searchMaxValueInArray(CustomArray customArray) throws CustomArrayException {
         return Arrays.stream(customArray.getArray())
                 .max()
                 .orElseThrow(CustomArrayException::new);
